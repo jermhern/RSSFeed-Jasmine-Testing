@@ -14,6 +14,9 @@ Tests Added On The RSS Feeds
 ============================
 this test assures that all of the feeds are **defined**. 
 If the feeds are a length of 0 then the jasmine testing frame work will throw an error
+
+
+
 `it('are defined', function() {
     expect(allFeeds).toBeDefined();
     expect(allFeeds.length).not.toBe(0);
@@ -21,6 +24,9 @@ If the feeds are a length of 0 then the jasmine testing frame work will throw an
 
 
 this test counts the amount of known feeds (4) and throws an error if the feed number is any less
+
+
+
 `it('have a defined URL', function() {
     let allFeedsURLs = [];
     for (let feed of allFeeds) {allFeedsURLs.push(feed.url);}
@@ -30,6 +36,9 @@ this test counts the amount of known feeds (4) and throws an error if the feed n
 Tests Added On The Pop Out Menu
 ===============================
 this test ensures the Pop Out menu is hidden by default 
+
+
+
 `it('element is hidden by default', function() {
     let isMenuHidden = false;
     if(document.querySelector('.menu-hidden').classList.value === 'menu-hidden') {
@@ -40,6 +49,9 @@ this test ensures the Pop Out menu is hidden by default
 
 this test ensures the menu changes visibility when clicked 
 (open when clicked from close, vice versa)
+
+
+
 `it('icon displays when clicked and hides when hidden', function() {
     let showingWhenOpen = false;
     let showingWhenClosed = true;
@@ -60,6 +72,8 @@ this test ensures
          * function is called and completes its work, 
          * there is at least a single .entry element within the .feed container
          
+         
+         
 `beforeEach(function(done) {
     loadFeed(0, done);
 });
@@ -72,6 +86,9 @@ it('should have at least one .entry element in .feed', function() {
 
 this test ensures when a new feed is loaded by the loadFeed 
 function that the content actually changes
+
+
+
 `beforeEach(function(done) {
     loadFeed(1, function(){
         // old page before reload
