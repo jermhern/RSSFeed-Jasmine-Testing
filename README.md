@@ -14,9 +14,9 @@ Tests Added On The RSS Feeds
 ============================
 this test assures that all of the feeds are **defined**. 
 If the feeds are a length of 0 then the jasmine testing frame work will throw an error
-
-
-
+-
+-
+-
 `it('are defined', function() {
     expect(allFeeds).toBeDefined();
     expect(allFeeds.length).not.toBe(0);
