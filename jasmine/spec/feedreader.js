@@ -34,7 +34,6 @@ $(function() {
          * and that the URL is not empty.
          */
          it('have a defined URL', function() {
-            let allFeedsURLs = [];
             for (let feed of allFeeds) {expect(feed.url.length).toBeGreaterThan(0);}
          });
 
