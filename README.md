@@ -21,16 +21,22 @@ Tests Added On The RSS Feeds
     });
 
 
-**this test counts the amount of known feeds (4) and throws an error if the feed number is any less**
+**this test counts the amount of known feeds and throws an error if the feed number is any less than 0**
 
 
 
     it('have a defined URL', function() {
-        let allFeedsURLs = [];
-        for (let feed of allFeeds) {allFeedsURLs.push(feed.url);}
-        expect(allFeedsURLs.length).toBe(4);
+        for (let feed of allFeeds) {expect(feed.url.length).toBeGreaterThan(0);}
     });
 
+**this test counts the amount of known names and throws an error if the feed number is any less than 0**
+
+
+
+    it('have a defined name', function() {
+        for(let feed of allFeeds) {expect(feed.name.length).toBeGreaterThan(0);}
+    });
+    
 Tests Added On The Pop Out Menu
 ===============================
 this test ensures the Pop Out menu is hidden by default 
@@ -38,11 +44,7 @@ this test ensures the Pop Out menu is hidden by default
 
 
     it('element is hidden by default', function() {
-        let isMenuHidden = false;
-        if(document.querySelector('.menu-hidden').classList.value === 'menu-hidden') {
-            isMenuHidden = true;
-        }
-        expect(isMenuHidden).toBe(true);
+        expect($('body').hasClass('menu-hidden')).toBe(true);
     });
 
 **this test ensures the menu changes visibility when clicked 
@@ -77,8 +79,8 @@ Tests done on the initial entries
     });
 
     it('should have at least one .entry element in .feed', function() {       
-        feedEntry = document.querySelector('.feed').children.length;
-        expect(feedEntry).not.toBe(0);
+        expect($('.feed .entry').length).toBeGreaterThan(0);
+        done();
     });
 
 **this test ensures when a new feed is loaded by the loadFeed 
