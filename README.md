@@ -10,4 +10,5 @@ you can either clone it using `git clone https://github.com/jermhern/RSSFeed-Jas
 
 or **download** the file from my github repo and open index.html to view the RSS Feed and Jasmine tests
 
-
+Tests Added
+============
