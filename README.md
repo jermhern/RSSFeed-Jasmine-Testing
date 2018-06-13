@@ -37,13 +37,13 @@ this test ensures the Pop Out menu is hidden by default
 
 
 
-    `it('element is hidden by default', function() {
+    it('element is hidden by default', function() {
         let isMenuHidden = false;
         if(document.querySelector('.menu-hidden').classList.value === 'menu-hidden') {
             isMenuHidden = true;
         }
         expect(isMenuHidden).toBe(true);
-    });`
+    });
 
 this test ensures the menu changes visibility when clicked 
 (open when clicked from close, vice versa)
