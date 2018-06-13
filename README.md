@@ -6,7 +6,7 @@ In this project you are given a web-based application that reads RSS feeds. The 
 # How to run this file
 To run this file: 
 
-you can either clone it using **git clone https://github.com/jermhern/RSSFeed-Jasmine-Testing.git** into a folder you have on your computer for projects and open index.html
+you can either clone it using `git clone https://github.com/jermhern/RSSFeed-Jasmine-Testing.git` into a folder you have on your computer for projects and open index.html
 
 or download the file from my github repo and open index.html to view the RSS Feed and Jasmine tests
 
