@@ -12,8 +12,8 @@ or **download** the file from my github repo and open index.html to view the RSS
 
 Tests Added On The RSS Feeds
 ============================
-this test assures that all of the feeds are **defined**. 
-If the feeds are a length of 0 then the jasmine testing frame work will throw an error
+**this test assures that all of the feeds are **defined**. 
+**If the feeds are a length of 0 then the jasmine testing frame work will throw an error**
 
     `it('are defined', function() {
         expect(allFeeds).toBeDefined();
@@ -21,15 +21,15 @@ If the feeds are a length of 0 then the jasmine testing frame work will throw an
     });`
 
 
-this test counts the amount of known feeds (4) and throws an error if the feed number is any less
+**this test counts the amount of known feeds (4) and throws an error if the feed number is any less**
 
 
 
-    `it('have a defined URL', function() {
+    it('have a defined URL', function() {
         let allFeedsURLs = [];
         for (let feed of allFeeds) {allFeedsURLs.push(feed.url);}
         expect(allFeedsURLs.length).toBe(4);
-    });`
+    });
 
 Tests Added On The Pop Out Menu
 ===============================
@@ -45,12 +45,12 @@ this test ensures the Pop Out menu is hidden by default
         expect(isMenuHidden).toBe(true);
     });
 
-this test ensures the menu changes visibility when clicked 
-(open when clicked from close, vice versa)
+**this test ensures the menu changes visibility when clicked 
+(open when clicked from close, vice versa)**
 
 
 
-    `it('icon displays when clicked and hides when hidden', function() {
+    it('icon displays when clicked and hides when hidden', function() {
         let showingWhenOpen = false;
         let showingWhenClosed = true;
 
@@ -62,31 +62,31 @@ this test ensures the menu changes visibility when clicked
             showingWhenOpen = true;
             expect(showingWhenOpen).toBe(true);
         }
-    });`
+    });
 
 Tests done on the initial entries
 =================================
-this test ensures 
+**this test ensures 
          * function is called and completes its work, 
-         * there is at least a single .entry element within the .feed container
+         * there is at least a single .entry element within the .feed container**
          
          
          
-    `beforeEach(function(done) {
+     beforeEach(function(done) {
         loadFeed(0, done);
     });
 
     it('should have at least one .entry element in .feed', function() {       
         feedEntry = document.querySelector('.feed').children.length;
         expect(feedEntry).not.toBe(0);
-    });`
+    });
 
-this test ensures when a new feed is loaded by the loadFeed 
-function that the content actually changes
+**this test ensures when a new feed is loaded by the loadFeed 
+function that the content actually changes**
 
 
 
-    `beforeEach(function(done) {
+     beforeEach(function(done) {
         loadFeed(1, function(){
             // old page before reload
             oldFeed = $('.feed').html();
@@ -100,4 +100,4 @@ function that the content actually changes
         expect($('.feed').html()).not.toEqual(oldFeed);
         done();
         });
-    });`
+    }); 
