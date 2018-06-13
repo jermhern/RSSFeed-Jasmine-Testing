@@ -14,24 +14,22 @@ Tests Added On The RSS Feeds
 ============================
 this test assures that all of the feeds are **defined**. 
 If the feeds are a length of 0 then the jasmine testing frame work will throw an error
--
--
--
-`it('are defined', function() {
-    expect(allFeeds).toBeDefined();
-    expect(allFeeds.length).not.toBe(0);
-});`
+
+    `it('are defined', function() {
+        expect(allFeeds).toBeDefined();
+        expect(allFeeds.length).not.toBe(0);
+    });`
 
 
 this test counts the amount of known feeds (4) and throws an error if the feed number is any less
 
 
 
-`it('have a defined URL', function() {
-    let allFeedsURLs = [];
-    for (let feed of allFeeds) {allFeedsURLs.push(feed.url);}
-    expect(allFeedsURLs.length).toBe(4);
- });`
+    `it('have a defined URL', function() {
+        let allFeedsURLs = [];
+        for (let feed of allFeeds) {allFeedsURLs.push(feed.url);}
+        expect(allFeedsURLs.length).toBe(4);
+    });`
 
 Tests Added On The Pop Out Menu
 ===============================
@@ -39,32 +37,32 @@ this test ensures the Pop Out menu is hidden by default
 
 
 
-`it('element is hidden by default', function() {
-    let isMenuHidden = false;
-    if(document.querySelector('.menu-hidden').classList.value === 'menu-hidden') {
-        isMenuHidden = true;
-    }
-    expect(isMenuHidden).toBe(true);
-});`
+    `it('element is hidden by default', function() {
+        let isMenuHidden = false;
+        if(document.querySelector('.menu-hidden').classList.value === 'menu-hidden') {
+            isMenuHidden = true;
+        }
+        expect(isMenuHidden).toBe(true);
+    });`
 
 this test ensures the menu changes visibility when clicked 
 (open when clicked from close, vice versa)
 
 
 
-`it('icon displays when clicked and hides when hidden', function() {
-    let showingWhenOpen = false;
-    let showingWhenClosed = true;
+    `it('icon displays when clicked and hides when hidden', function() {
+        let showingWhenOpen = false;
+        let showingWhenClosed = true;
 
-    if(document.querySelector('.menu-hidden').classList.value === 'menu-hidden') {
-        showingWhenClosed = false;
-        expect(showingWhenClosed).toBe(false);
-    }
-    if(document.querySelector('.menu-hidden').classList.value !== 'menu-hidden') {
-       showingWhenOpen = true;
-       expect(showingWhenOpen).toBe(true);
-    }
-});`
+        if(document.querySelector('.menu-hidden').classList.value === 'menu-hidden') {
+            showingWhenClosed = false;
+            expect(showingWhenClosed).toBe(false);
+        }
+        if(document.querySelector('.menu-hidden').classList.value !== 'menu-hidden') {
+            showingWhenOpen = true;
+            expect(showingWhenOpen).toBe(true);
+        }
+    });`
 
 Tests done on the initial entries
 =================================
@@ -74,33 +72,32 @@ this test ensures
          
          
          
-`beforeEach(function(done) {
-    loadFeed(0, done);
-});
+    `beforeEach(function(done) {
+        loadFeed(0, done);
+    });
 
-it('should have at least one .entry element in .feed', function() {
-            
-    feedEntry = document.querySelector('.feed').children.length;
-    expect(feedEntry).not.toBe(0);
-});`
+    it('should have at least one .entry element in .feed', function() {       
+        feedEntry = document.querySelector('.feed').children.length;
+        expect(feedEntry).not.toBe(0);
+    });`
 
 this test ensures when a new feed is loaded by the loadFeed 
 function that the content actually changes
 
 
 
-`beforeEach(function(done) {
-    loadFeed(1, function(){
-        // old page before reload
-        oldFeed = $('.feed').html();
-        done();
+    `beforeEach(function(done) {
+        loadFeed(1, function(){
+            // old page before reload
+            oldFeed = $('.feed').html();
+            done();
+        });
     });
- });
 
- it('has loaded', function(done) {
-    loadFeed(0, function() {
-    // compare new page with old page after reload
-    expect($('.feed').html()).not.toEqual(oldFeed);
-    done();
-    });
- });`
+    it('has loaded', function(done) {
+        loadFeed(0, function() {
+        // compare new page with old page after reload
+        expect($('.feed').html()).not.toEqual(oldFeed);
+        done();
+        });
+    });`
