@@ -66,17 +66,7 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
           it('icon displays when clicked and hides when hidden', function() {
-            let showingWhenOpen = false;
-            let showingWhenClosed = true;
-
-            if(document.querySelector('.menu-hidden').classList.value === 'menu-hidden') {
-                showingWhenClosed = false;
-                expect(showingWhenClosed).toBe(false);
-            }
-            if(document.querySelector('.menu-hidden').classList.value !== 'menu-hidden') {
-                showingWhenOpen = true;
-                expect(showingWhenOpen).toBe(true);
-            }
+            expect($('body').hasClass('menu-hidden')).toBe(true);
           });
 
     });
